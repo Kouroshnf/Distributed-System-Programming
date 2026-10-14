@@ -157,3 +157,6 @@ For validation and testing use this command :
 - npx ajv-cli validate -s json-schemas/Users.json -d json-schemas-test/UserTest.json
 
 in simple we can change the name of Users.json and UserTest.json with a valid name that we want to check.
+
+for movies and its schema test use this command : 
+- npx ajv-cli validate --spec=draft7 -c ajv-formats -s json-schemas/movies.json -d json-schemas-test/MovieTest.json

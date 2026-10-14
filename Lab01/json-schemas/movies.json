@@ -27,7 +27,7 @@
         }, 
         "rating":{
             "type":"integer",
-            "minimum": 0,
+            "minimum": 1,
             "maximum":10,
             "description":"expressing the rating the owner has given to the film"
         },
@@ -38,5 +38,21 @@
         }
     },
     "required":["id", "title", "owner", "private"],
-    "additionalProperties": false
+    "additionalProperties": false,
+    "if":{
+        "properties":{
+            "private": {
+                "const": false
+            }
+        },
+        "required":["private"]
+    },
+    "then":{
+       "properties" :{
+            "watchDate" : false,
+            "rating" : false,
+            "favorite" : false
+       }
+    }
+
 }
