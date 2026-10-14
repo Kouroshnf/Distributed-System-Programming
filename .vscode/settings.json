@@ -1,0 +1,12 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": ["**/Lab01/json-schemas-test/User*.json"],
+            "url": "./Lab01/json-schemas/users.json"
+        },
+        {
+            "fileMatch": ["**/Lab01/json-schemas-test/Movie*.json"],
+            "url": "./Lab01/json-schemas/movies.json"
+        }
+    ]
+}
