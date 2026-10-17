@@ -7,6 +7,10 @@
         {
             "fileMatch": ["**/Lab01/json-schemas-test/Movie*.json"],
             "url": "./Lab01/json-schemas/movies.json"
+        },
+        {
+            "fileMatch": ["**/Lab01/json-schemas-test/Review*.json"],
+            "url": "./Lab01/json-schemas/reviews.json"
         }
     ]
 }

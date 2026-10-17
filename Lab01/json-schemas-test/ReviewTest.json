@@ -1,0 +1,8 @@
+{
+    "filmId": 1,
+    "reviewerId": 2,
+    "completed": true,
+    "reviewDate": "2023-01-15",
+    "rating": 9,
+    "review": "A masterpiece of storytelling and character development."
+}

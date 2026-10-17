@@ -1,0 +1,56 @@
+{
+    "$schema" : "http://json-schema.org/draft-07/schema#",
+    "title" : "Reviews",
+    "description" : "the review invitations that a user may issue to another user",
+    "type" : "object",
+    "properties" : {
+        "filmId" : {
+            "type" : "integer",
+            "description" : "unique identifier of the film for which a review invitation has been issued"
+        },
+        "reviewerId" : {
+            "type" : "integer",
+            "description" : " unique identifier of the user who has received the review invitation "
+        },
+        "completed" : {
+            "type" : "boolean",
+            "description" : "a Boolean property, set to true if the review has been completed, false otherwise"
+        },
+        "reviewDate" : {
+            "type" : "string",
+            "format" : "date",
+            "description" : "the date when the review was completed"
+        },
+        "rating" : {
+            "type" : "integer",
+            "minimum" : 1,
+            "maximum" : 10,
+            "description" : "the rating the reviewer has given to the film"
+        },
+        "review" : {
+            "type" : "string",
+            "description" : "the textual review the reviewer has given to the film",
+            "maxLength": 1000
+        }
+    },
+    "required": ["filmId", "reviewerId", "completed"],
+    "additionalProperties": false,
+    "if": {
+        "properties": {
+            "completed": {
+                "const": true
+            }
+        },
+        "required": ["completed"]
+    },
+    "then": {
+        "required": ["reviewDate", "rating", "review"]
+        },
+    "else": {
+        "properties": {
+            "reviewDate": false,
+            "rating": false,
+            "review": false
+        }
+    }
+}
